@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67843BFA2622AA1C00F8CC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67843BF92622AA1C00F8CC86 /* AppDelegate.swift */; };
+		67843BFC2622AA2300F8CC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67843BFB2622AA2300F8CC86 /* Assets.xcassets */; };
+		67843BFF2622AA2300F8CC86 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67843BFD2622AA2300F8CC86 /* MainMenu.xib */; };
+		67843C0B2622AA2400F8CC86 /* GrayScale_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67843C0A2622AA2400F8CC86 /* GrayScale_SwiftTests.swift */; };
+		67843C162622AA2400F8CC86 /* GrayScale_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67843C152622AA2400F8CC86 /* GrayScale_SwiftUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67843C072622AA2400F8CC86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67843BEE2622AA1C00F8CC86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67843BF52622AA1C00F8CC86;
+			remoteInfo = "GrayScale Swift";
+		};
+		67843C122622AA2400F8CC86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67843BEE2622AA1C00F8CC86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67843BF52622AA1C00F8CC86;
+			remoteInfo = "GrayScale Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrayScale Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843BF92622AA1C00F8CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67843BFB2622AA2300F8CC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67843BFE2622AA2300F8CC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		67843C002622AA2300F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67843C012622AA2300F8CC86 /* GrayScale_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrayScale_Swift.entitlements; sourceTree = "<group>"; };
+		67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrayScale SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843C0A2622AA2400F8CC86 /* GrayScale_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayScale_SwiftTests.swift; sourceTree = "<group>"; };
+		67843C0C2622AA2400F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrayScale SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843C152622AA2400F8CC86 /* GrayScale_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayScale_SwiftUITests.swift; sourceTree = "<group>"; };
+		67843C172622AA2400F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67843BF32622AA1C00F8CC86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C032622AA2400F8CC86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C0E2622AA2400F8CC86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67843BED2622AA1C00F8CC86 = {
+			isa = PBXGroup;
+			children = (
+				67843BF82622AA1C00F8CC86 /* GrayScale Swift */,
+				67843C092622AA2400F8CC86 /* GrayScale SwiftTests */,
+				67843C142622AA2400F8CC86 /* GrayScale SwiftUITests */,
+				67843BF72622AA1C00F8CC86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67843BF72622AA1C00F8CC86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */,
+				67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */,
+				67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67843BF82622AA1C00F8CC86 /* GrayScale Swift */ = {
+			isa = PBXGroup;
+			children = (
+				67843BF92622AA1C00F8CC86 /* AppDelegate.swift */,
+				67843BFB2622AA2300F8CC86 /* Assets.xcassets */,
+				67843BFD2622AA2300F8CC86 /* MainMenu.xib */,
+				67843C002622AA2300F8CC86 /* Info.plist */,
+				67843C012622AA2300F8CC86 /* GrayScale_Swift.entitlements */,
+			);
+			path = "GrayScale Swift";
+			sourceTree = "<group>";
+		};
+		67843C092622AA2400F8CC86 /* GrayScale SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				67843C0A2622AA2400F8CC86 /* GrayScale_SwiftTests.swift */,
+				67843C0C2622AA2400F8CC86 /* Info.plist */,
+			);
+			path = "GrayScale SwiftTests";
+			sourceTree = "<group>";
+		};
+		67843C142622AA2400F8CC86 /* GrayScale SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67843C152622AA2400F8CC86 /* GrayScale_SwiftUITests.swift */,
+				67843C172622AA2400F8CC86 /* Info.plist */,
+			);
+			path = "GrayScale SwiftUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67843BF52622AA1C00F8CC86 /* GrayScale Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale Swift" */;
+			buildPhases = (
+				67843BF22622AA1C00F8CC86 /* Sources */,
+				67843BF32622AA1C00F8CC86 /* Frameworks */,
+				67843BF42622AA1C00F8CC86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GrayScale Swift";
+			productName = "GrayScale Swift";
+			productReference = 67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67843C052622AA2400F8CC86 /* GrayScale SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftTests" */;
+			buildPhases = (
+				67843C022622AA2400F8CC86 /* Sources */,
+				67843C032622AA2400F8CC86 /* Frameworks */,
+				67843C042622AA2400F8CC86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67843C082622AA2400F8CC86 /* PBXTargetDependency */,
+			);
+			name = "GrayScale SwiftTests";
+			productName = "GrayScale SwiftTests";
+			productReference = 67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67843C102622AA2400F8CC86 /* GrayScale SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftUITests" */;
+			buildPhases = (
+				67843C0D2622AA2400F8CC86 /* Sources */,
+				67843C0E2622AA2400F8CC86 /* Frameworks */,
+				67843C0F2622AA2400F8CC86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67843C132622AA2400F8CC86 /* PBXTargetDependency */,
+			);
+			name = "GrayScale SwiftUITests";
+			productName = "GrayScale SwiftUITests";
+			productReference = 67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67843BEE2622AA1C00F8CC86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					67843BF52622AA1C00F8CC86 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					67843C052622AA2400F8CC86 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 67843BF52622AA1C00F8CC86;
+					};
+					67843C102622AA2400F8CC86 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 67843BF52622AA1C00F8CC86;
+					};
+				};
+			};
+			buildConfigurationList = 67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "GrayScale Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67843BED2622AA1C00F8CC86;
+			productRefGroup = 67843BF72622AA1C00F8CC86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67843BF52622AA1C00F8CC86 /* GrayScale Swift */,
+				67843C052622AA2400F8CC86 /* GrayScale SwiftTests */,
+				67843C102622AA2400F8CC86 /* GrayScale SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67843BF42622AA1C00F8CC86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67843BFC2622AA2300F8CC86 /* Assets.xcassets in Resources */,
+				67843BFF2622AA2300F8CC86 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C042622AA2400F8CC86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C0F2622AA2400F8CC86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67843BF22622AA1C00F8CC86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67843BFA2622AA1C00F8CC86 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C022622AA2400F8CC86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67843C0B2622AA2400F8CC86 /* GrayScale_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67843C0D2622AA2400F8CC86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67843C162622AA2400F8CC86 /* GrayScale_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67843C082622AA2400F8CC86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67843BF52622AA1C00F8CC86 /* GrayScale Swift */;
+			targetProxy = 67843C072622AA2400F8CC86 /* PBXContainerItemProxy */;
+		};
+		67843C132622AA2400F8CC86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67843BF52622AA1C00F8CC86 /* GrayScale Swift */;
+			targetProxy = 67843C122622AA2400F8CC86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67843BFD2622AA2300F8CC86 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67843BFE2622AA2300F8CC86 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67843C182622AA2400F8CC86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67843C192622AA2400F8CC86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		67843C1B2622AA2400F8CC86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GrayScale Swift/GrayScale_Swift.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		67843C1C2622AA2400F8CC86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GrayScale Swift/GrayScale_Swift.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		67843C1E2622AA2400F8CC86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrayScale Swift.app/Contents/MacOS/GrayScale Swift";
+			};
+			name = Debug;
+		};
+		67843C1F2622AA2400F8CC86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrayScale Swift.app/Contents/MacOS/GrayScale Swift";
+			};
+			name = Release;
+		};
+		67843C212622AA2400F8CC86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GrayScale Swift";
+			};
+			name = Debug;
+		};
+		67843C222622AA2400F8CC86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "GrayScale SwiftUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GrayScale Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "GrayScale Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67843C182622AA2400F8CC86 /* Debug */,
+				67843C192622AA2400F8CC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67843C1B2622AA2400F8CC86 /* Debug */,
+				67843C1C2622AA2400F8CC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67843C1E2622AA2400F8CC86 /* Debug */,
+				67843C1F2622AA2400F8CC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67843C212622AA2400F8CC86 /* Debug */,
+				67843C222622AA2400F8CC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67843BEE2622AA1C00F8CC86 /* Project object */;
+}
