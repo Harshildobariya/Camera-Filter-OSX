@@ -22,8 +22,12 @@
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>allow to record a video</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>allow to record a photo</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

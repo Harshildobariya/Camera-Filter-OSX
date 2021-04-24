@@ -32,16 +32,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GrayScale Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843BF62622AA1C00F8CC86 /* Camera filters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera filters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67843BF92622AA1C00F8CC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67843BFB2622AA2300F8CC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67843BFE2622AA2300F8CC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		67843C002622AA2300F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67843C012622AA2300F8CC86 /* GrayScale_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrayScale_Swift.entitlements; sourceTree = "<group>"; };
-		67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrayScale SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843C062622AA2400F8CC86 /* Camera filtersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Camera filtersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67843C0A2622AA2400F8CC86 /* GrayScale_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayScale_SwiftTests.swift; sourceTree = "<group>"; };
 		67843C0C2622AA2400F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GrayScale SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67843C112622AA2400F8CC86 /* Camera filtersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Camera filtersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67843C152622AA2400F8CC86 /* GrayScale_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayScale_SwiftUITests.swift; sourceTree = "<group>"; };
 		67843C172622AA2400F8CC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +74,7 @@
 		67843BED2622AA1C00F8CC86 = {
 			isa = PBXGroup;
 			children = (
-				67843BF82622AA1C00F8CC86 /* GrayScale Swift */,
+				67843BF82622AA1C00F8CC86 /* Camera Filters */,
 				67843C092622AA2400F8CC86 /* GrayScale SwiftTests */,
 				67843C142622AA2400F8CC86 /* GrayScale SwiftUITests */,
 				67843BF72622AA1C00F8CC86 /* Products */,
@@ -84,14 +84,14 @@
 		67843BF72622AA1C00F8CC86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */,
-				67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */,
-				67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */,
+				67843BF62622AA1C00F8CC86 /* Camera filters.app */,
+				67843C062622AA2400F8CC86 /* Camera filtersTests.xctest */,
+				67843C112622AA2400F8CC86 /* Camera filtersUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		67843BF82622AA1C00F8CC86 /* GrayScale Swift */ = {
+		67843BF82622AA1C00F8CC86 /* Camera Filters */ = {
 			isa = PBXGroup;
 			children = (
 				67843BF92622AA1C00F8CC86 /* AppDelegate.swift */,
@@ -100,7 +100,7 @@
 				67843C002622AA2300F8CC86 /* Info.plist */,
 				67843C012622AA2300F8CC86 /* GrayScale_Swift.entitlements */,
 			);
-			path = "GrayScale Swift";
+			path = "Camera Filters";
 			sourceTree = "<group>";
 		};
 		67843C092622AA2400F8CC86 /* GrayScale SwiftTests */ = {
@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		67843BF52622AA1C00F8CC86 /* GrayScale Swift */ = {
+		67843BF52622AA1C00F8CC86 /* Camera filters */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale Swift" */;
+			buildConfigurationList = 67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filters" */;
 			buildPhases = (
 				67843BF22622AA1C00F8CC86 /* Sources */,
 				67843BF32622AA1C00F8CC86 /* Frameworks */,
@@ -136,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = "GrayScale Swift";
+			name = "Camera filters";
 			productName = "GrayScale Swift";
-			productReference = 67843BF62622AA1C00F8CC86 /* GrayScale Swift.app */;
+			productReference = 67843BF62622AA1C00F8CC86 /* Camera filters.app */;
 			productType = "com.apple.product-type.application";
 		};
-		67843C052622AA2400F8CC86 /* GrayScale SwiftTests */ = {
+		67843C052622AA2400F8CC86 /* Camera filtersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftTests" */;
+			buildConfigurationList = 67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filtersTests" */;
 			buildPhases = (
 				67843C022622AA2400F8CC86 /* Sources */,
 				67843C032622AA2400F8CC86 /* Frameworks */,
@@ -154,14 +154,14 @@
 			dependencies = (
 				67843C082622AA2400F8CC86 /* PBXTargetDependency */,
 			);
-			name = "GrayScale SwiftTests";
+			name = "Camera filtersTests";
 			productName = "GrayScale SwiftTests";
-			productReference = 67843C062622AA2400F8CC86 /* GrayScale SwiftTests.xctest */;
+			productReference = 67843C062622AA2400F8CC86 /* Camera filtersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		67843C102622AA2400F8CC86 /* GrayScale SwiftUITests */ = {
+		67843C102622AA2400F8CC86 /* Camera filtersUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftUITests" */;
+			buildConfigurationList = 67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filtersUITests" */;
 			buildPhases = (
 				67843C0D2622AA2400F8CC86 /* Sources */,
 				67843C0E2622AA2400F8CC86 /* Frameworks */,
@@ -172,9 +172,9 @@
 			dependencies = (
 				67843C132622AA2400F8CC86 /* PBXTargetDependency */,
 			);
-			name = "GrayScale SwiftUITests";
+			name = "Camera filtersUITests";
 			productName = "GrayScale SwiftUITests";
-			productReference = 67843C112622AA2400F8CC86 /* GrayScale SwiftUITests.xctest */;
+			productReference = 67843C112622AA2400F8CC86 /* Camera filtersUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "GrayScale Swift" */;
+			buildConfigurationList = 67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "Camera filters" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -212,9 +212,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				67843BF52622AA1C00F8CC86 /* GrayScale Swift */,
-				67843C052622AA2400F8CC86 /* GrayScale SwiftTests */,
-				67843C102622AA2400F8CC86 /* GrayScale SwiftUITests */,
+				67843BF52622AA1C00F8CC86 /* Camera filters */,
+				67843C052622AA2400F8CC86 /* Camera filtersTests */,
+				67843C102622AA2400F8CC86 /* Camera filtersUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,12 +275,12 @@
 /* Begin PBXTargetDependency section */
 		67843C082622AA2400F8CC86 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 67843BF52622AA1C00F8CC86 /* GrayScale Swift */;
+			target = 67843BF52622AA1C00F8CC86 /* Camera filters */;
 			targetProxy = 67843C072622AA2400F8CC86 /* PBXContainerItemProxy */;
 		};
 		67843C132622AA2400F8CC86 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 67843BF52622AA1C00F8CC86 /* GrayScale Swift */;
+			target = 67843BF52622AA1C00F8CC86 /* Camera filters */;
 			targetProxy = 67843C122622AA2400F8CC86 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -417,15 +417,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "GrayScale Swift/GrayScale_Swift.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Camera Filters/GrayScale_Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "GrayScale Swift/Info.plist";
+				INFOPLIST_FILE = "Camera Filters/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CameraFilters-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -436,15 +436,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "GrayScale Swift/GrayScale_Swift.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Camera Filters/GrayScale_Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "GrayScale Swift/Info.plist";
+				INFOPLIST_FILE = "Camera Filters/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CameraFilters-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -467,7 +467,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrayScale Swift.app/Contents/MacOS/GrayScale Swift";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camera filters.app/Contents/MacOS/Camera filters";
 			};
 			name = Debug;
 		};
@@ -488,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GrayScale-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrayScale Swift.app/Contents/MacOS/GrayScale Swift";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camera filters.app/Contents/MacOS/Camera filters";
 			};
 			name = Release;
 		};
@@ -533,7 +533,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "GrayScale Swift" */ = {
+		67843BF12622AA1C00F8CC86 /* Build configuration list for PBXProject "Camera filters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67843C182622AA2400F8CC86 /* Debug */,
@@ -542,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale Swift" */ = {
+		67843C1A2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67843C1B2622AA2400F8CC86 /* Debug */,
@@ -551,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftTests" */ = {
+		67843C1D2622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filtersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67843C1E2622AA2400F8CC86 /* Debug */,
@@ -560,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "GrayScale SwiftUITests" */ = {
+		67843C202622AA2400F8CC86 /* Build configuration list for PBXNativeTarget "Camera filtersUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				67843C212622AA2400F8CC86 /* Debug */,
