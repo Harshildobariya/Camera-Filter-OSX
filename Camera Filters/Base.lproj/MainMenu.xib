@@ -18,6 +18,11 @@
                 <outlet property="btnRecord" destination="LY5-B4-d6K" id="nXi-av-SY6"/>
                 <outlet property="previewView" destination="4Oi-8o-w09" id="mCZ-MQ-mKJ"/>
                 <outlet property="tempImage" destination="TNA-7s-al4" id="OPo-rf-h2o"/>
+                <outlet property="tempImgView1" destination="hvS-W1-eEz" id="s5r-kU-QA4"/>
+                <outlet property="tempImgView3" destination="QHG-QN-zXG" id="xEV-bk-17O"/>
+                <outlet property="tempImgView4" destination="ltk-On-zux" id="5JG-Qp-W7i"/>
+                <outlet property="tempImgView5" destination="WKn-r5-LI5" id="MFg-0m-7wb"/>
+                <outlet property="tempImgView6" destination="D9G-Ve-2MO" id="gMm-7h-rlQ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -687,12 +692,12 @@
         <window title="Camera filters" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="854" height="428"/>
+            <rect key="contentRect" x="335" y="390" width="900" height="428"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="854" height="428"/>
             <value key="maxSize" type="size" width="854" height="428"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="854" height="428"/>
+                <rect key="frame" x="0.0" y="0.0" width="900" height="428"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button hidden="YES" verticalHuggingPriority="750" id="LY5-B4-d6K">
@@ -706,15 +711,60 @@
                             <action selector="btnRecordAction:" target="Voe-Tx-rLC" id="PNt-cA-rDC"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-W1-eEz">
+                        <rect key="frame" x="20" y="266" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Yj0-CU-aBO"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-7s-al4">
+                        <rect key="frame" x="2" y="72" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="50L-pJ-KUn"/>
+                        <connections>
+                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="lAi-HP-Moc"/>
+                        </connections>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-QN-zXG">
+                        <rect key="frame" x="630" y="266" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="u0U-fu-Kfb"/>
+                        <connections>
+                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="GJ9-im-5n5"/>
+                        </connections>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltk-On-zux">
+                        <rect key="frame" x="216" y="72" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="4tR-hy-fv1"/>
+                        <connections>
+                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="Tbl-gi-wRh"/>
+                        </connections>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKn-r5-LI5">
+                        <rect key="frame" x="429" y="72" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="x6h-F5-vN9"/>
+                        <connections>
+                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="Lpm-Z4-frB"/>
+                        </connections>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D9G-Ve-2MO">
+                        <rect key="frame" x="642" y="72" width="208" height="124"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="6lP-xI-0Ki"/>
+                        <connections>
+                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="xAY-5L-ewB"/>
+                        </connections>
+                    </imageView>
                     <box fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="PFE-u6-Sqa">
-                        <rect key="frame" x="288" y="247" width="280" height="160"/>
+                        <rect key="frame" x="295" y="248" width="311" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="contentView" id="WUe-fX-bwN">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                            <rect key="frame" x="0.0" y="0.0" width="311" height="160"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Oi-8o-w09">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="160"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <viewLayoutGuide key="safeArea" id="NUC-6b-217"/>
                                     <viewLayoutGuide key="layoutMargins" id="NxB-Gm-Mha"/>
@@ -722,14 +772,6 @@
                             </subviews>
                         </view>
                     </box>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-7s-al4">
-                        <rect key="frame" x="20" y="72" width="208" height="124"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="50L-pJ-KUn"/>
-                        <connections>
-                            <action selector="tempImageView:" target="Voe-Tx-rLC" id="lAi-HP-Moc"/>
-                        </connections>
-                    </imageView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="78" y="-105"/>
