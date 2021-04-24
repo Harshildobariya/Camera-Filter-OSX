@@ -22,27 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
     var imageCount = 1
     var concurrentQueue = DispatchQueue(label: "recordingQueue", attributes: .concurrent)
     
-    
-    
-    
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         var originalVideo = AVAsset(url: outputFileURL)
         
         let item = AVPlayerItem(asset: originalVideo)
         buildVideoFromImageArray()
         
-//        _getDataFor(item) { (data) in
-//
-//
-//            var tempFileUrl = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("temp_video_data.mp4", isDirectory: false)
-//            tempFileUrl = URL(fileURLWithPath: tempFileUrl.path)
-//
-//            let filePath = self.documentsPathForFileName(name: "/temp_video_data.mp4")
-//            let videoAsData = NSData(data: data!)
-//                    videoAsData.write(toFile: filePath, atomically: true)
-//                    let videoFileURL = NSURL(fileURLWithPath: filePath)
-//            print(data)
-//        }
         print("Done")
     }
     
@@ -57,6 +42,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
     @IBOutlet var window: NSWindow!
     @IBOutlet weak var previewView: NSView!
     @IBOutlet weak var tempImage: NSImageView!
+    
+    @IBOutlet weak var tempImgView1: NSImageView!
+    @IBOutlet weak var tempImgView3: NSImageView!
+    @IBOutlet weak var tempImgView4: NSImageView!
+    @IBOutlet weak var tempImgView5: NSImageView!
+    @IBOutlet weak var tempImgView6: NSImageView!
+    
     
     
     var captureSession: AVCaptureSession? = nil
@@ -242,27 +234,51 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
 //                }
                 
                 DispatchQueue.main.async {
-                    
-                    if let outputValue = filter.value(forKey: kCIOutputImageKey) as? CIImage {
-                        
-                        let rep = NSCIImageRep(ciImage: outputValue)
-                        let filteredImage = NSImage(size: rep.size)
-                        filteredImage.addRepresentation(rep)
-                        self.selectedPhotosArray.append(filteredImage)
-                        self.tempImage.image = filteredImage
-                    }
+                    self.setupVideoToAllViews(cameraImage)
+//                    if let outputValue = filter.value(forKey: kCIOutputImageKey) as? CIImage {
+//                        let rep = NSCIImageRep(ciImage: outputValue)
+//                        let filteredImage = NSImage(size: rep.size)
+//                        filteredImage.addRepresentation(rep)
+//                        self.selectedPhotosArray.append(filteredImage)
+//                        self.tempImage.image = filteredImage
+//                    }
                 }
             }
         }
     }
     
+    func setupVideoToAllViews(_ image:CIImage) {
+        //You can use Any of this filters for the view
+        
+        //            CIPhotoEffectMono,CIColorInvert,CIColorMonochrome,CIColorPosterize, CIFalseColor, CIMaskToAlpha, CIMinimumComponent, CIMinimumComponent, CIPhotoEffectChrome, CIPhotoEffectFade, CIPhotoEffectInstant, CIPhotoEffectProcess, CIPhotoEffectTransfer, CIPhotoEffectTonal, CISepiaTone, CIVignetteEffect, CIVignetteEffect
+        
+        ///CIPhotoEffectNoir
+        
+        self.tempImgView1.image = applyFilter(name: "CIPhotoEffectMono", image: image)
+        self.tempImage.image = applyFilter(name: "CIPhotoEffectTransfer", image: image)
+        self.tempImgView3.image = applyFilter(name: "CIColorPosterize", image: image)
+        self.tempImgView4.image = applyFilter(name: "CIFalseColor", image: image)
+        self.tempImgView5.image = applyFilter(name: "CIPhotoEffectChrome", image: image)
+        self.tempImgView6.image = applyFilter(name: "CISepiaTone", image: image)
+        
+    }
+    
+    func applyFilter(name: String, image:CIImage) -> NSImage {
+        let filter = CIFilter(name: name)!
+        filter.setValue(image, forKey: kCIInputImageKey)
+        if let outputValue = filter.value(forKey: kCIOutputImageKey) as? CIImage {
+            
+            let rep = NSCIImageRep(ciImage: outputValue)
+            let filteredImage = NSImage(size: rep.size)
+            filteredImage.addRepresentation(rep)
+            self.selectedPhotosArray.append(filteredImage)
+            return filteredImage
+        }
+        return NSImage()
+    }
+    
     
     func buildVideoFromImageArray() {
-
-//        for image in self.selectedPhotosArray {
-//                selectedPhotosArray.append(image)
-//            }
-
         
         var homeDriPath = FileManager.default.homeDirectoryForCurrentUser
         homeDriPath = homeDriPath.appendingPathComponent("Desktop")
@@ -274,96 +290,94 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
         let timeString = formatter.string(from: currentDate)
         let fileName = "Gray \(dateString) at \(timeString)"
         let outPutPath = "\(homeDriPath.path)/\(fileName).mp4"
-
+        
         imageArrayToVideoURL = NSURL(fileURLWithPath: outPutPath)
-            removeFileAtURLIfExists(url: imageArrayToVideoURL)
-            guard let videoWriter = try? AVAssetWriter(outputURL: imageArrayToVideoURL as URL, fileType: AVFileType.mp4) else {
-                fatalError("AVAssetWriter error")
-            }
-            let outputSettings = [AVVideoCodecKey : AVVideoCodecType.h264, AVVideoWidthKey : NSNumber(value: Float(outputSize.width)), AVVideoHeightKey : NSNumber(value: Float(outputSize.height))] as [String : Any]
-            guard videoWriter.canApply(outputSettings: outputSettings, forMediaType: AVMediaType.video) else {
-                fatalError("Negative : Can't applay the Output settings...")
-            }
-            let videoWriterInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: outputSettings)
-            let sourcePixelBufferAttributesDictionary = [kCVPixelBufferPixelFormatTypeKey as String : NSNumber(value: kCVPixelFormatType_32ARGB), kCVPixelBufferWidthKey as String: NSNumber(value: Float(outputSize.width)), kCVPixelBufferHeightKey as String: NSNumber(value: Float(outputSize.height))]
-            let pixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoWriterInput, sourcePixelBufferAttributes: sourcePixelBufferAttributesDictionary)
-            if videoWriter.canAdd(videoWriterInput) {
-                videoWriter.add(videoWriterInput)
-            }
-
-            if videoWriter.startWriting() {
-                let zeroTime = CMTimeMake(value: Int64(imagesPerSecond),timescale: self.fps)
-                videoWriter.startSession(atSourceTime: zeroTime)
-
-                assert(pixelBufferAdaptor.pixelBufferPool != nil)
-                
-                videoWriterInput.requestMediaDataWhenReady(on: concurrentQueue, using: { () -> Void in
-                    //let fps: Int32 = 1
-                    let framePerSecond: Int64 = Int64(self.imagesPerSecond)
-                    let frameDuration = CMTimeMake(value: Int64(self.imagesPerSecond), timescale: self.fps)
-                    var frameCount: Int64 = 0
-                    var appendSucceeded = true
-                    while (!self.selectedPhotosArray.isEmpty) {         // wird so lange ausgeführt, bis noch etwas im Array steht
-                        if (videoWriterInput.isReadyForMoreMediaData) {
-                            let nextPhoto = self.selectedPhotosArray.remove(at: 0)  // foto wird aus dem selectedPhotosArray gelöscht
-
-                            let lastFrameTime = CMTimeMake(value: frameCount * framePerSecond, timescale: self.fps)
-                            let presentationTime = frameCount == 0 ? lastFrameTime : CMTimeAdd(lastFrameTime, frameDuration)
-                            var pixelBuffer: CVPixelBuffer? = nil
-                            let status: CVReturn = CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pixelBufferAdaptor.pixelBufferPool!, &pixelBuffer)
-                            if let pixelBuffer = pixelBuffer, status == 0 {
-                                let managedPixelBuffer = pixelBuffer
-                                CVPixelBufferLockBaseAddress(managedPixelBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
-                                let data = CVPixelBufferGetBaseAddress(managedPixelBuffer)
-                                let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
-                                let context = CGContext(data: data, width: Int(self.outputSize.width), height: Int(self.outputSize.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(managedPixelBuffer), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)
-                                context!.clear(CGRect(x: 0, y: 0, width: CGFloat(self.outputSize.width), height: CGFloat(self.outputSize.height)))
-                                let horizontalRatio = CGFloat(self.outputSize.width) / nextPhoto.size.width
-                                let verticalRatio = CGFloat(self.outputSize.height) / nextPhoto.size.height
-                                //let aspectRatio = max(horizontalRatio, verticalRatio) // ScaleAspectFill
-                                let aspectRatio = min(horizontalRatio, verticalRatio) // ScaleAspectFit
-
-                                let newSize: CGSize = CGSize(width: nextPhoto.size.width * aspectRatio, height: nextPhoto.size.height * aspectRatio)
-
-                                let x = newSize.width < self.outputSize.width ? (self.outputSize.width - newSize.width) / 2 : 0
-                                let y = newSize.height < self.outputSize.height ? (self.outputSize.height - newSize.height) / 2 : 0
-                                
-                                context?.draw(nextPhoto.CGImage, in: CGRect(x: x, y: y, width: newSize.width, height: newSize.height))
-                                CVPixelBufferUnlockBaseAddress(managedPixelBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
-                                appendSucceeded = pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
-                            } else {
-                                print("Failed to allocate pixel buffer")
-                                appendSucceeded = false
-                            }
-                        }
-                        if !appendSucceeded {
-                            break
-                        }
-                        frameCount += 1
-                    }
-                    videoWriterInput.markAsFinished()
-                    videoWriter.finishWriting { () -> Void in
-                        print("-----video1 url = \(self.imageArrayToVideoURL)")
-
-                        //self.asset = AVAsset(url: self.imageArrayToVideoURL as URL)
-                        PHPhotoLibrary.shared().performChanges({
-                            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.imageArrayToVideoURL as URL)
-                        }) { saved, error in
-                            if saved {
-                                let fetchOptions = PHFetchOptions()
-                                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-
-                                let fetchResult = PHAsset.fetchAssets(with: .video, options: fetchOptions).firstObject
-                                // fetchResult is your latest video PHAsset
-                                // To fetch latest image  replace .video with .image
-                            }
-                        }
-                    }
-                })
-            }
-
+        removeFileAtURLIfExists(url: imageArrayToVideoURL)
+        guard let videoWriter = try? AVAssetWriter(outputURL: imageArrayToVideoURL as URL, fileType: AVFileType.mp4) else {
+            fatalError("AVAssetWriter error")
         }
-    
+        let outputSettings = [AVVideoCodecKey : AVVideoCodecType.h264, AVVideoWidthKey : NSNumber(value: Float(outputSize.width)), AVVideoHeightKey : NSNumber(value: Float(outputSize.height))] as [String : Any]
+        guard videoWriter.canApply(outputSettings: outputSettings, forMediaType: AVMediaType.video) else {
+            fatalError("Negative : Can't applay the Output settings...")
+        }
+        let videoWriterInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: outputSettings)
+        let sourcePixelBufferAttributesDictionary = [kCVPixelBufferPixelFormatTypeKey as String : NSNumber(value: kCVPixelFormatType_32ARGB), kCVPixelBufferWidthKey as String: NSNumber(value: Float(outputSize.width)), kCVPixelBufferHeightKey as String: NSNumber(value: Float(outputSize.height))]
+        let pixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoWriterInput, sourcePixelBufferAttributes: sourcePixelBufferAttributesDictionary)
+        if videoWriter.canAdd(videoWriterInput) {
+            videoWriter.add(videoWriterInput)
+        }
+        
+        if videoWriter.startWriting() {
+            let zeroTime = CMTimeMake(value: Int64(imagesPerSecond),timescale: self.fps)
+            videoWriter.startSession(atSourceTime: zeroTime)
+            
+            assert(pixelBufferAdaptor.pixelBufferPool != nil)
+            
+            videoWriterInput.requestMediaDataWhenReady(on: concurrentQueue, using: { () -> Void in
+                //let fps: Int32 = 1
+                let framePerSecond: Int64 = Int64(self.imagesPerSecond)
+                let frameDuration = CMTimeMake(value: Int64(self.imagesPerSecond), timescale: self.fps)
+                var frameCount: Int64 = 0
+                var appendSucceeded = true
+                while (!self.selectedPhotosArray.isEmpty) {         // wird so lange ausgeführt, bis noch etwas im Array steht
+                    if (videoWriterInput.isReadyForMoreMediaData) {
+                        let nextPhoto = self.selectedPhotosArray.remove(at: 0)  // foto wird aus dem selectedPhotosArray gelöscht
+                        
+                        let lastFrameTime = CMTimeMake(value: frameCount * framePerSecond, timescale: self.fps)
+                        let presentationTime = frameCount == 0 ? lastFrameTime : CMTimeAdd(lastFrameTime, frameDuration)
+                        var pixelBuffer: CVPixelBuffer? = nil
+                        let status: CVReturn = CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pixelBufferAdaptor.pixelBufferPool!, &pixelBuffer)
+                        if let pixelBuffer = pixelBuffer, status == 0 {
+                            let managedPixelBuffer = pixelBuffer
+                            CVPixelBufferLockBaseAddress(managedPixelBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+                            let data = CVPixelBufferGetBaseAddress(managedPixelBuffer)
+                            let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+                            let context = CGContext(data: data, width: Int(self.outputSize.width), height: Int(self.outputSize.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(managedPixelBuffer), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)
+                            context!.clear(CGRect(x: 0, y: 0, width: CGFloat(self.outputSize.width), height: CGFloat(self.outputSize.height)))
+                            let horizontalRatio = CGFloat(self.outputSize.width) / nextPhoto.size.width
+                            let verticalRatio = CGFloat(self.outputSize.height) / nextPhoto.size.height
+                            //let aspectRatio = max(horizontalRatio, verticalRatio) // ScaleAspectFill
+                            let aspectRatio = min(horizontalRatio, verticalRatio) // ScaleAspectFit
+                            
+                            let newSize: CGSize = CGSize(width: nextPhoto.size.width * aspectRatio, height: nextPhoto.size.height * aspectRatio)
+                            
+                            let x = newSize.width < self.outputSize.width ? (self.outputSize.width - newSize.width) / 2 : 0
+                            let y = newSize.height < self.outputSize.height ? (self.outputSize.height - newSize.height) / 2 : 0
+                            
+                            context?.draw(nextPhoto.CGImage, in: CGRect(x: x, y: y, width: newSize.width, height: newSize.height))
+                            CVPixelBufferUnlockBaseAddress(managedPixelBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+                            appendSucceeded = pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
+                        } else {
+                            print("Failed to allocate pixel buffer")
+                            appendSucceeded = false
+                        }
+                    }
+                    if !appendSucceeded {
+                        break
+                    }
+                    frameCount += 1
+                }
+                videoWriterInput.markAsFinished()
+                videoWriter.finishWriting { () -> Void in
+                    print("-----video1 url = \(self.imageArrayToVideoURL)")
+                    
+                    //self.asset = AVAsset(url: self.imageArrayToVideoURL as URL)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.imageArrayToVideoURL as URL)
+                    }) { saved, error in
+                        if saved {
+                            let fetchOptions = PHFetchOptions()
+                            fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                            
+                            _ = PHAsset.fetchAssets(with: .video, options: fetchOptions).firstObject
+                            // fetchResult is your latest video PHAsset
+                            // To fetch latest image  replace .video with .image
+                        }
+                    }
+                }
+            })
+        }
+    }
     
     func removeFileAtURLIfExists(url: NSURL) {
         if let filePath = url.path {
@@ -377,91 +391,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
             }
         }
     }
-
 }
 
-func _getDataFor(_ item: AVPlayerItem, completion: @escaping (Data?) -> ()) {
-    guard item.asset.isExportable else {
-        completion(nil)
-        return
-    }
-
-    let composition = AVMutableComposition()
-    let compositionVideoTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID(kCMPersistentTrackID_Invalid))
-
-    let sourceVideoTrack = item.asset.tracks(withMediaType: AVMediaType.video).first!
-    do {
-        try compositionVideoTrack!.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: item.duration), of: sourceVideoTrack, at: CMTime.zero)
-    } catch(_) {
-        completion(nil)
-        return
-    }
-
-    let compatiblePresets = AVAssetExportSession.exportPresets(compatibleWith: composition)
-    var preset: String = AVAssetExportPresetPassthrough
-    if compatiblePresets.contains(AVAssetExportPreset1920x1080) { preset = AVAssetExportPreset1920x1080 }
-
-    guard
-        let exportSession = AVAssetExportSession(asset: composition, presetName: preset),
-        exportSession.supportedFileTypes.contains(AVFileType.mp4) else {
-        completion(nil)
-        return
-    }
-
-    var tempFileUrl = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("temp_video_data.mp4", isDirectory: false)
-    tempFileUrl = URL(fileURLWithPath: tempFileUrl.path)
-
-    exportSession.outputURL = tempFileUrl
-    exportSession.outputFileType = AVFileType.mp4
-    let startTime = CMTimeMake(value: 0, timescale: 1)
-    let timeRange = CMTimeRangeMake(start: startTime, duration: item.duration)
-    exportSession.timeRange = timeRange
-
-    exportSession.exportAsynchronously {
-        print("\(tempFileUrl)")
-        print("\(exportSession.error)")
-        let data = try? Data(contentsOf: tempFileUrl)
-        _ = try? FileManager.default.removeItem(at: tempFileUrl)
-        completion(data)
-    }
-}
-
-//autoreleasepool {
-//
-//    connection.videoOrientation = AVCaptureVideoOrientation.landscapeLeft;
-//    guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-//    let cameraImage = CIImage(cvPixelBuffer: pixelBuffer)
-//
-//    // COMMENT: And now you've create a CIImage with a Filter instruction...
-//    let filter = CIFilter(name: "CIPhotoEffectNoir")!
-//    filter.setValue(cameraImage, forKey: kCIInputImageKey)
-////            filter.setValue(0.0, forKey: kCIInputBrightnessKey)
-////            filter.setValue(0.0, forKey: kCIInputSaturationKey)
-////            filter.setValue(1.1, forKey: kCIInputContrastKey)
-//
-//
-//    let formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer)!
-//    var currentVideoDimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
-//    var currentSampleTime = CMSampleBufferGetOutputPresentationTimeStamp(sampleBuffer)
-//
-//    // COMMENT: And now you're sending the filtered image back to the screen.
-//    DispatchQueue.main.async {
-//
-//        if let outputValue = filter.value(forKey: kCIOutputImageKey) as? CIImage {
-//
-//
-//            let filter1 = CIFilter(name:"CIExposureAdjust")
-//            filter1?.setValue(outputValue, forKey: kCIInputImageKey)
-//            filter1?.setValue(0.7, forKey: kCIInputEVKey)
-//            let outputMainImg = filter1?.outputImage
-//
-//            let rep = NSCIImageRep(ciImage: outputMainImg!)
-//            let filteredImage = NSImage(size: rep.size)
-//            filteredImage.addRepresentation(rep)
-//            self.tempImage.image = filteredImage
-//        }
-//    }
-//}
 extension NSImage {
     var CGImage: CGImage {
         get {
