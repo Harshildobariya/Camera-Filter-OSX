@@ -31,6 +31,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
         print("Done")
     }
     
+    var tempInt = 0
+    
 
     func documentsPathForFileName(name: String) -> String {
             let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -260,7 +262,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, AVCaptureVideoDataOutputSamp
         self.tempImgView4.image = applyFilter(name: "CIFalseColor", image: image)
         self.tempImgView5.image = applyFilter(name: "CIPhotoEffectChrome", image: image)
         self.tempImgView6.image = applyFilter(name: "CISepiaTone", image: image)
-        
+        let singleImage = self.applyFilter(name: "CIPhotoEffectMono", image: image)
+        tempInt+=1
+//        let desktopURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+//        let destinationURL = desktopURL.appendingPathComponent("my\(tempInt)-image.png")
+//                if singleImage.pngWrite(to: destinationURL, options: .withoutOverwriting) {
+//                    print("File saved")
+//                    do {
+//                        let workspace = NSWorkspace.shared
+//                        if let screen = NSScreen.main  {
+//                            try workspace.setDesktopImageURL(destinationURL, for: screen, options: [:])
+//                        }
+//                    } catch {
+//                        print(error)
+//                    }
+//                }
     }
     
     func applyFilter(name: String, image:CIImage) -> NSImage {
@@ -402,4 +418,17 @@ extension NSImage {
             return maskRef.unsafelyUnwrapped
         }
     }
+    var pngData: Data? {
+            guard let tiffRepresentation = tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: tiffRepresentation) else { return nil }
+            return bitmapImage.representation(using: .png, properties: [:])
+        }
+        func pngWrite(to url: URL, options: Data.WritingOptions = .atomic) -> Bool {
+            do {
+                try pngData?.write(to: url, options: options)
+                return true
+            } catch {
+                print(error)
+                return false
+            }
+        }
 }
